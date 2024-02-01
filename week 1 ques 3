@@ -1,0 +1,58 @@
+#include<iostream>
+#include<cstdlib>
+
+
+using namespace std;
+
+#define max 100
+
+void
+linear_search (int arr[max], int low, int high, int key)
+{
+  int i;
+  for (i = low; i <= high; i++)
+	{
+	  if (arr[i] == key)
+		{
+		  cout << "Present ," << i;
+		  return;
+		}
+
+	}
+
+
+  cout << "Not present";
+
+}
+
+int
+main ()
+{
+  int i, n, arr[max], key;
+  cout << "enter the size of the array:";
+  cin >> n;
+  for (i = 0; i < n; i++)
+	{
+	  cout << "Enter the element " << i + 1 << ":  ";
+	  cin >> arr[i];
+	}
+  cout << "enter the key you want to find:";
+  cin >> key;
+  if (arr[0] == key)
+	{
+	  cout << "Present ," << 0;
+	}
+  else
+	{
+	  while ((i < n) && (arr[i] <= key))
+		{
+		  if ((i < n) && (arr[i] <= key))
+			{
+			  i = i * 2;
+			}
+		}
+	  linear_search (arr, i / 2, min (i, n), key);
+	}
+
+  return 0;
+}
