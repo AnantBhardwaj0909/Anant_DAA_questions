@@ -1,0 +1,30 @@
+#include<iostream>
+#define MAX 100
+using namespace std;
+int main()
+{
+    int arr[MAX], i, j, k, n;
+    cout<<"Enter the elements of array: ";
+    cin>>n;
+    for(i=0; i<n; i++)
+    {
+        cout<<"Enter the element: ";
+        cin>>arr[i];
+    }
+    for(i=0; i<n; i++)
+    {
+        j=i-1;
+        k=arr[i];
+        while(j>=0 && arr[j]>k)
+        {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = k;
+    }
+    cout<<"\nThe sorted array is: \n";
+    for(i=0; i<n; i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
