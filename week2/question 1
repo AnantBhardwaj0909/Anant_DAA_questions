@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+#define MAX 100
+int main()
+{
+    int n, arr[MAX], key, i, count=0;
+    cout<<"Enter the size of array: ";
+    cin>>n;
+    for(i=0; i<n; i++)
+    {
+        cout<<"Enter the element: ";
+        cin>>arr[i];
+    }
+    cout<<"Enter the key: ";
+    cin>>key;
+    for(i=0; i<n; i++)
+    {
+        if(arr[i]==key)
+            count++;
+        else if(arr[i]>key)
+            break;
+    }
+    if(count==0)
+        cout<<"Not-Present";
+    else
+        cout<<key<<" "<<count<<endl;
+}
